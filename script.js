@@ -45,6 +45,10 @@ var app = new Vue(
             autoChange : imageAutoChange,
             down : changeImageDown,
             up : changeImageUp,
+            reSize : function(){
+                this.className += 'ciao';
+                console.log('resizeee');
+            }
         },
     }
 );
@@ -75,9 +79,9 @@ function changeImageUp(){
     elemento.mainText = images[startImage].text;
 }
 
-document.getElementById('slider-image').addEventListener('mouseenter',() =>{
+document.getElementById('carousel').addEventListener('mouseenter',() =>{
     clearInterval(imageAutoChange);
 });
-document.getElementById('slider-image').addEventListener('mouseleave',() =>{
+document.getElementById('carousel').addEventListener('mouseleave',() =>{
     imageAutoChange = setInterval(changeImageDown,3000);
 });

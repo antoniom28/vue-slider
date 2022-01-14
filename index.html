@@ -11,7 +11,7 @@
     <div id="container">
         <div id="carousel">
             <div id="main-image">
-                <div class="image" :style="{backgroundImage: mainImage}">
+                <div @click="reSize()" class="image" :style="{backgroundImage: mainImage}">
                     <div class="text">
                     <h4>{{mainTitle}}</h4>
                     <p>{{mainText}}</p>
