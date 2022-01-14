@@ -29,6 +29,8 @@ const images = [
 const min = 0;
 const max = images.length;
 let startImage = 0;
+imageAutoChange = setInterval(changeImageDown,3000);
+
 var app = new Vue(
     {
         el:"#container",
@@ -40,7 +42,7 @@ var app = new Vue(
             imageStatus : ["selected","","","",""],
         },
         methods:{
-            autoChange : setInterval(changeImageDown,3000),
+            autoChange : imageAutoChange,
             down : changeImageDown,
             up : changeImageUp,
         },
@@ -72,3 +74,10 @@ function changeImageUp(){
     elemento.mainTitle = images[startImage].title;
     elemento.mainText = images[startImage].text;
 }
+
+document.getElementById('slider-image').addEventListener('mouseenter',() =>{
+    clearInterval(imageAutoChange);
+});
+document.getElementById('slider-image').addEventListener('mouseleave',() =>{
+    imageAutoChange = setInterval(changeImageDown,3000);
+});
