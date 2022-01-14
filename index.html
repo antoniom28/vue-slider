@@ -9,7 +9,7 @@
 </head>
 <body>
     <div id="container">
-        <div id="carousel">
+        <div :class="size" id="carousel">
             <div id="main-image">
                 <div @click="reSize()" class="image" :style="{backgroundImage: mainImage}">
                     <div class="text">
@@ -21,13 +21,13 @@
 
             <div id="slider-main">
                 <div id="slider-image">
-                    <div v-for="(elemento,index) in imagePreview" class="slider-img" :class="imageStatus[index]" :style="{backgroundImage : elemento}">
+                    <div @click="changeImageOnClick(index)" v-for="(elemento,index) in imagePreview" class="slider-img" :class="imageStatus[index]" :style="{backgroundImage : elemento}">
                     </div>
                 </div>
-                <div class="up" @click="up()">
+                <div class="up" @click="up('up')">
                     <i class="fas fa-chevron-up"></i>
                 </div>
-                <div class="down" @click="down()">
+                <div class="down" @click="down('down')">
                     <i class="fas fa-chevron-down"></i>
                 </div>
             </div>

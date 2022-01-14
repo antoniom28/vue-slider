@@ -4,9 +4,11 @@
     padding: 0;
 }
 
-.container{
+#container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     height: 100vh;
-    position: relative;
 }
 
 .image{
@@ -18,13 +20,19 @@
     background-position: center;
 }
 
+.big{
+    /*: scale(2);
+    width: 100vw;
+    height: 50vh;*/
+
+    width: 100vw!important;
+    height: 100vh!important;
+}
+
 #carousel{
     width: 800px;
     height: 280px;
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
+    display: flex;
 }
 
 #main-image{
